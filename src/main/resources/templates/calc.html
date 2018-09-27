@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calc Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/calc}" th:object="${calculatorModel}" method="post">
+    <p>Number #1: <input type="text" th:field="*{firstNumber}" /></p>
+    <p>Number #2: <input type="text" th:field="*{secondNumber}" /></p>
+    <select th:field="*{calculation}">
+        <option th:value="'addition'" th:text="Add"></option>
+        <option th:value="'substraction'" th:text="Substract"></option>
+        <option th:value="'multiplication'" th:text="Multiplicate"></option>
+        <option th:value="'division'" th:text="Divide"></option>
+    </select>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>
